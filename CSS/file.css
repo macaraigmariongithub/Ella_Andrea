@@ -1,0 +1,131 @@
+body {
+    padding: 0%;
+    margin: 0%;
+    background-image: url('../image/heartbeat-my.gif');
+    font-family: sans-serif;
+}
+
+body.yes {
+    background-color: rgb(10, 2, 7);
+    background-size: auto;
+    background-image: url('../image/rabbit-love.gif');
+}
+
+body.yes .confirm {
+    display: none;
+}
+
+body.yes .dialog {
+    display: block;
+}
+
+.heart {
+    animation: heartbeat 1s infinite;
+    background-color: red;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 10px;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    background-color: red;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 10px;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1.25);
+    }
+    25% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(1.75);
+    }
+}
+
+.confirm {
+    min-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(189, 73, 92);
+    box-shadow: 3px 3px 3px rgba(240, 21, 211, 0.158);
+    border-radius: 5px;
+}
+
+.confirm__container {
+    padding: 14px;
+}
+
+.confirm__container .title {
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+}
+
+.confirm__actions {
+    display: flex;
+    column-gap: 12px;
+}
+
+.confirm__actions button {
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+    padding: 7px;
+    color: #FFFF;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.confirm__actions .btn-yes {
+    background-color: rgb(29, 226, 72);
+}
+
+.confirm__actions .btn-no {
+    background-color: rgb(207, 29, 44);
+    position: relative; 
+}
+
+.dialog {
+    display: none;
+    min-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f365b8;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.dialog__container {
+    padding: 10px 5px;
+}
+
+.dialog__container p {
+    color: #5c0b0b;
+    text-align: center;
+    font-size: 24px;
+    font-family: serif;
+}
+
